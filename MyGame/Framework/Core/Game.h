@@ -2,6 +2,7 @@
 #include <d3d9.h>
 #include <d3dx9.h>
 #include "Window.h"
+#include "Timer.h"
 
 class Game
 {
@@ -19,4 +20,5 @@ protected:
     double mspf;							// milliseconds per frame
     double deltaTime;						// game update rate
     LPWINDOW window;                        // game window
+    LPTIMER timer                           // timer
 };

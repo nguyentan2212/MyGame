@@ -8,9 +8,22 @@ Game::Game(HINSTANCE _hInstance, int _nCmdShow)
 	fps = 60;
 	mspf = 1000.0 / 60.0;
 	deltaTime = 0;
+	timer = new Timer();
+	timer->Start();
 }
 
-void Game::Update() { }
+void Game::Update() { 
+	timer->Tick();
+	deltaTime = timer->getDeltaTime();
+	if (deltaTime >= mspf)
+	{
+		// log
+	}
+	else
+	{
+		// log
+	}
+}
 
 void Game::LateUpdate() { }
 
