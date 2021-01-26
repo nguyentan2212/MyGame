@@ -3,7 +3,7 @@
 #define ICONSMALL 108 
 #define NAME "main window"
 #define WIN_CLASS "windowClass"
-#define WIDTH 500
+#define WIDTH 900
 #define HEIGHT 700
 #include <d3d9.h>
 #include <d3dx9.h>
@@ -21,7 +21,7 @@ public:
     void Draw();
     void EndDraw();
     bool IsOpen() const;
-    string GetName();
+
     static LRESULT CALLBACK msgProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 private:
     HWND mainWindow;
