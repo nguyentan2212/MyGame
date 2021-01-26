@@ -2,10 +2,14 @@
 
 Window::Window(HINSTANCE _hInstance, int _nCmdShow)
 {
-	lpWindowName = ultility::StringConverter::s2lpcws(NAME);
-	lpWindowClass = ultility::StringConverter::s2lpcws(WIN_CLASS);
+	// file input
+	wstring ws = ultility::StringConverter::s2ws(NAME);
+	lpWindowName = ws.c_str();
+	wstring ws2 = ultility::StringConverter::s2ws(WIN_CLASS);
+	lpWindowClass = ws2.c_str();
 	width = WIDTH;
 	height = HEIGHT;
+	//
 	hInstance = _hInstance;
 	nCmdShow = _nCmdShow;
 	Register();
@@ -34,7 +38,7 @@ void Window::Register()
 	{
 		return; // log
 	}
-	return;
+	return; // log
 }
 
 void Window::Init()
@@ -43,11 +47,11 @@ void Window::Init()
 		CW_USEDEFAULT, 0, width, height, nullptr, nullptr, hInstance, nullptr);
 	if (!mainWindow)
 	{
-		return;
+		return; // log
 	}
 	ShowWindow(mainWindow, nCmdShow);
 	UpdateWindow(mainWindow);
-	return;
+	return; // log
 }
 
 Window::~Window()
@@ -57,6 +61,29 @@ Window::~Window()
 	if (hInstance)
 		hInstance = NULL;
 }
+
+void Window::Update()
+{
+}
+
+void Window::BeginDraw()
+{
+}
+
+void Window::Draw()
+{
+}
+
+void Window::EndDraw()
+{
+}
+
+bool Window::IsOpen() const
+{
+	return true;
+}
+
+
 
 LRESULT Window::msgProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
