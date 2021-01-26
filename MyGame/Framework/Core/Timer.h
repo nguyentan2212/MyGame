@@ -20,3 +20,4 @@ private:
 	double deltaTime;
 	bool isStopped;
 };
+typedef Timer* LPTIMER;
