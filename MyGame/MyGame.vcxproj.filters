@@ -36,6 +36,9 @@
     <ClInclude Include="Framework\Utility\StringConverter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Framework\Core\Timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyGame.cpp">
@@ -48,6 +51,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Framework\Utility\StringConverter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Core\Timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
