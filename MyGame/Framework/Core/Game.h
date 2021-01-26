@@ -6,6 +6,7 @@
 class Game
 {
 public:
+    Game(HINSTANCE _hInstance, int _nCmdShow);
     virtual void Update();
     virtual void LateUpdate();
     virtual void Draw();
