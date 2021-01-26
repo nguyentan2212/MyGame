@@ -20,5 +20,5 @@ protected:
     double mspf;							// milliseconds per frame
     double deltaTime;						// game update rate
     LPWINDOW window;                        // game window
-    LPTIMER timer                           // timer
+    LPTIMER timer;                          // timer
 };
