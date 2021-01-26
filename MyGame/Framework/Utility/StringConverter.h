@@ -9,8 +9,7 @@ namespace ultility
 	{
 	public:
 		static std::wstring s2ws(const std::string& str);
-		static std::string ws2s(const std::wstring& ws);
-		static const wchar_t* s2lpcws(const std::string& str);
+		static std::string ws2s(const std::wstring& ws);		
 	};
 }
 

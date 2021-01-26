@@ -21,10 +21,5 @@ namespace ultility
 
 		return converterX.to_bytes(wstr);
 	}
-
-	const wchar_t* StringConverter::s2lpcws(const std::string& str)
-	{
-		return s2ws(str).c_str();
-	}
 #pragma warning(pop)
 }
