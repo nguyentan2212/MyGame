@@ -10,15 +10,14 @@ Game::Game(HINSTANCE _hInstance, int _nCmdShow)
 	deltaTime = 0;
 	timer = new Timer();
 	timer->Start();
-	auto file_logger = spdlog::basic_logger_mt("file_logger", "logs/mylogfile.txt");
-
-	file_logger->info("Game started");
+	auto mylogger = spdlog::basic_logger_mt("mylogger", "logs/mylogfile.txt");
+	mylogger->info("***********************************");
+	mylogger->info("Game started");
+	manager = new GameManager();
 }
 
 void Game::Update() { 
 	timer->Tick();
-	auto file_logger = spdlog::get("file_logger");
-	file_logger->info("Game update");
 	deltaTime = timer->getDeltaTime();
 	if (deltaTime >= mspf)
 	{
@@ -34,8 +33,7 @@ void Game::Update() {
 void Game::LateUpdate() { }
 
 void Game::Draw() { 
-	auto file_logger = spdlog::get("file_logger");
-	file_logger->info("Game draw");
+
 }
 
 bool Game::IsRunning() const

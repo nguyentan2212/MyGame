@@ -3,9 +3,9 @@
 #include <d3dx9.h>
 #include "Window.h"
 #include "Timer.h"
+#include "./Manager/GameManager.h"
 #include <spdlog/spdlog.h>
 #include <spdlog/sinks/basic_file_sink.h>
-#include <spdlog/sinks/rotating_file_sink.h>
 
 class Game
 {
@@ -24,4 +24,5 @@ protected:
     double deltaTime;						// game update rate
     LPWINDOW window;                        // game window
     LPTIMER timer;                          // timer
+    GameManager* manager;
 };
