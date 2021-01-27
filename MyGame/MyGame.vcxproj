@@ -147,6 +147,7 @@
     <ClInclude Include="Framework\Core\Timer.h" />
     <ClInclude Include="Framework\Core\Window.h" />
     <ClInclude Include="Framework\Utility\Expected.h" />
+    <ClInclude Include="Framework\Utility\json.hpp" />
     <ClInclude Include="Framework\Utility\StringConverter.h" />
     <ClInclude Include="MyGame.h" />
     <ClInclude Include="Resource.h" />
