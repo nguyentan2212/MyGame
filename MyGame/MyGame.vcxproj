@@ -144,6 +144,8 @@
   <ItemGroup>
     <ClInclude Include="framework.h" />
     <ClInclude Include="Framework\Core\Game.h" />
+    <ClInclude Include="Framework\Core\Manager\GameManager.h" />
+    <ClInclude Include="Framework\Core\Manager\Manager.h" />
     <ClInclude Include="Framework\Core\Timer.h" />
     <ClInclude Include="Framework\Core\Window.h" />
     <ClInclude Include="Framework\Utility\Expected.h" />
@@ -155,6 +157,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Framework\Core\Game.cpp" />
+    <ClCompile Include="Framework\Core\Manager\GameManager.cpp" />
+    <ClCompile Include="Framework\Core\Manager\Manager.cpp" />
     <ClCompile Include="Framework\Core\Timer.cpp" />
     <ClCompile Include="Framework\Core\Window.cpp" />
     <ClCompile Include="Framework\Utility\StringConverter.cpp" />
