@@ -1,0 +1,8 @@
+{
+  "manager": {
+    "title": "My game",
+    "className": "MyGame",
+    "width": 500,
+    "height": 500
+  }
+}
