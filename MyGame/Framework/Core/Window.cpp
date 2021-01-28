@@ -12,12 +12,17 @@ Window::Window(HINSTANCE _hInstance, int _nCmdShow)
 	
 	hInstance = _hInstance;
 	nCmdShow = _nCmdShow;
+
 	Register();
 	Init();
+	auto mylogger = spdlog::get("mylogger");
+	device = new DrawDevice(mainWindow);
+	mylogger->info("Window constructor end");
 }
 
 void Window::Register()
 {
+	auto mylogger = spdlog::get("mylogger");
 	WNDCLASSEXW wcex;
 	
 	wcex.cbSize = sizeof(WNDCLASSEX);
@@ -36,21 +41,26 @@ void Window::Register()
 
 	if (!RegisterClassEx(&wcex))
 	{
+		mylogger->error("Window register failed");
 		return; // log
 	}
+	mylogger->info("Window register succeeded");
 	return; // log
 }
 
 void Window::Init()
 {
+	auto mylogger = spdlog::get("mylogger");
 	mainWindow = CreateWindowW(lpWindowClass, lpWindowTitle, WS_OVERLAPPEDWINDOW,
 		CW_USEDEFAULT, 0, width, height, nullptr, nullptr, hInstance, nullptr);
 	if (!mainWindow)
 	{
+		mylogger->error("Window initialize failed");
 		return; // log
 	}
 	ShowWindow(mainWindow, nCmdShow);
 	UpdateWindow(mainWindow);
+	mylogger->info("Window initialize succeeded");
 	return; // log
 }
 
