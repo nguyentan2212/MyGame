@@ -1,6 +1,6 @@
 #include "WindowManager.h"
 
-WindowManager::WindowManager() : Manager(DEFAULT_PATH)
+WindowManager::WindowManager() : Manager(PATH)
 {
 	Load();
 }

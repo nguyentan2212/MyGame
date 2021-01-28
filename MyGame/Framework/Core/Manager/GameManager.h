@@ -1,5 +1,5 @@
 #pragma once
-#define DEFAULT_PATH "manager/GameManager.json"
+#define PATH "manager/GameManager.json"
 #include <spdlog/spdlog.h>
 #include "../../Utility/json.hpp"
 #include "Manager.h"

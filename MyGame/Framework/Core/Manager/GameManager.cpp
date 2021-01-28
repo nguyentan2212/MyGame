@@ -1,6 +1,6 @@
 #include "GameManager.h"
 
-GameManager::GameManager() : Manager(DEFAULT_PATH)
+GameManager::GameManager() : Manager(PATH)
 {
 	Load();
 }
