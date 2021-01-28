@@ -1,7 +1,7 @@
 #pragma once
 #define ICON 107
 #define ICONSMALL 108 
-#define NAME "main window"
+#define TITLE "main window"
 #define WIN_CLASS "windowClass"
 #define WIDTH 900
 #define HEIGHT 700
@@ -9,6 +9,8 @@
 #include <d3dx9.h>
 #include <string>
 #include "../Utility/StringConverter.h"
+#include "./Manager/WindowManager.h"
+
 using namespace std;
 
 class Window
@@ -27,7 +29,8 @@ private:
     HWND mainWindow;
     HINSTANCE hInstance;
     int nCmdShow;
-    LPCWSTR lpWindowName;
+    WindowManager* manager;
+    LPCWSTR lpWindowTitle;
     LPCWSTR lpWindowClass;
     int width;
     int height;

@@ -2,14 +2,14 @@
 
 Window::Window(HINSTANCE _hInstance, int _nCmdShow)
 {
-	// file input
-	wstring ws = ultility::StringConverter::s2ws(NAME);
-	lpWindowName = ws.c_str();
-	wstring ws2 = ultility::StringConverter::s2ws(WIN_CLASS);
+	manager = new WindowManager();
+	wstring ws = ultility::StringConverter::s2ws(manager->title);
+	lpWindowTitle = ws.c_str();
+	wstring ws2 = ultility::StringConverter::s2ws(manager->className);
 	lpWindowClass = ws2.c_str();
-	width = WIDTH;
-	height = HEIGHT;
-	//
+	width = manager->width;
+	height = manager->height;
+	
 	hInstance = _hInstance;
 	nCmdShow = _nCmdShow;
 	Register();
@@ -43,7 +43,7 @@ void Window::Register()
 
 void Window::Init()
 {
-	mainWindow = CreateWindowW(lpWindowClass, lpWindowName, WS_OVERLAPPEDWINDOW,
+	mainWindow = CreateWindowW(lpWindowClass, lpWindowTitle, WS_OVERLAPPEDWINDOW,
 		CW_USEDEFAULT, 0, width, height, nullptr, nullptr, hInstance, nullptr);
 	if (!mainWindow)
 	{
