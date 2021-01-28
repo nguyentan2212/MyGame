@@ -2,6 +2,10 @@
 
 Game::Game(HINSTANCE _hInstance, int _nCmdShow)
 {
+	auto mylogger = spdlog::basic_logger_mt("mylogger", "logs/mylogfile.txt");
+	mylogger->info("***********************************");
+	mylogger->info("Game started");
+	manager = new GameManager();
 	hInstance = _hInstance;
 	nCmdShow = _nCmdShow;
 	window = new Window(hInstance, nCmdShow);
@@ -10,10 +14,6 @@ Game::Game(HINSTANCE _hInstance, int _nCmdShow)
 	deltaTime = 0;
 	timer = new Timer();
 	timer->Start();
-	auto mylogger = spdlog::basic_logger_mt("mylogger", "logs/mylogfile.txt");
-	mylogger->info("***********************************");
-	mylogger->info("Game started");
-	manager = new GameManager();
 }
 
 void Game::Update() { 
