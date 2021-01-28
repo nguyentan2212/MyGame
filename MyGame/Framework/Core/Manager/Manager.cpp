@@ -10,12 +10,12 @@ Manager::Manager(const string& _filePath)
 		json managerFile;
 		f >> managerFile;
 		manager = managerFile["manager"];
-		mylogger->info("Game manager file load succeeded");
+		mylogger->info("Manager file load succeeded. File path: " + _filePath);
 	}
 	else
 	{
 		// log
-		mylogger->error("Game manager file not found");
+		mylogger->error("Manager file not found. File path: "+_filePath);
 	}
 }
 
