@@ -1,0 +1,10 @@
+{
+  "manager": {
+    "folder": "textures/",
+    "textures": [
+      {
+        "name": "mario.png"
+      }
+    ]
+  }
+}
