@@ -3,6 +3,7 @@
 #include <d3dx9.h>
 #include "Window.h"
 #include "Timer.h"
+#include "Manager/TextureManager.h"
 #include "./Manager/GameManager.h"
 #include <spdlog/spdlog.h>
 #include <spdlog/sinks/basic_file_sink.h>
@@ -25,4 +26,5 @@ protected:
     LPWINDOW window;                        // game window
     LPTIMER timer;                          // timer
     GameManager* manager;
+    TextureManager* texture;
 };

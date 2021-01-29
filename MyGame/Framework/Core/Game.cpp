@@ -5,13 +5,18 @@ Game::Game(HINSTANCE _hInstance, int _nCmdShow)
 	auto mylogger = spdlog::basic_logger_mt("mylogger", "logs/mylogfile.txt");
 	mylogger->info("***********************************");
 	mylogger->info("Game started");
+
 	manager = new GameManager();
+	fps = manager->fps;
+	mspf = 1000.0 / fps;
+	deltaTime = 0;
+
 	hInstance = _hInstance;
 	nCmdShow = _nCmdShow;
 	window = new Window(hInstance, nCmdShow);
-	fps = 60;
-	mspf = 1000.0 / 60.0;
-	deltaTime = 0;
+	
+	texture = new TextureManager(window->GetDrawDevice());
+
 	timer = new Timer();
 	timer->Start();
 }
