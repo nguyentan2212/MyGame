@@ -14,7 +14,6 @@ public:
 
 protected:
 	bool IsPathExist(const string& s);
-	virtual void Load() {}
 
 	string filePath;
 	json manager;
