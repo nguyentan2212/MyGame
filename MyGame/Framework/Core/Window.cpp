@@ -93,6 +93,11 @@ bool Window::IsOpen() const
 	return true;
 }
 
+DrawDevice* Window::GetDrawDevice()
+{
+	return device;
+}
+
 
 
 LRESULT Window::msgProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)

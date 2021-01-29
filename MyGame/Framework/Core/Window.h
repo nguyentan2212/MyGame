@@ -20,7 +20,7 @@ public:
     void Draw();
     void EndDraw();
     bool IsOpen() const;
-
+    DrawDevice* GetDrawDevice();
     static LRESULT CALLBACK msgProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 private:
     HWND mainWindow;
