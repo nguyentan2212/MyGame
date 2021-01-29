@@ -59,3 +59,8 @@ void DrawDevice::End()
 	d3ddv->EndScene();
 	d3ddv->Present(NULL, NULL, NULL, NULL);
 }
+
+LPDIRECT3DDEVICE9 DrawDevice::GetDevice()
+{
+	return d3ddv;
+}
