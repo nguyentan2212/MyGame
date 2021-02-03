@@ -7,6 +7,7 @@
 #include "../Utility/StringConverter.h"
 #include "./Manager/WindowManager.h"
 #include "../Graphic/DrawDevice.h"
+#include "../Graphic/Sprite.h"
 
 using namespace std;
 
@@ -17,7 +18,7 @@ public:
     ~Window();
     void Update();
     void BeginDraw();
-    void Draw();
+    void Draw(Sprite* sprite, int x, int y);
     void EndDraw();
     bool IsOpen() const;
     DrawDevice* GetDrawDevice();

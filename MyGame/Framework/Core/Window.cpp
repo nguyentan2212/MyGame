@@ -78,14 +78,24 @@ void Window::Update()
 
 void Window::BeginDraw()
 {
+	device->Begin();
 }
 
-void Window::Draw()
+void Window::Draw(Sprite* sprite, int x, int y)
 {
+	if (sprite->flip)
+	{
+		x *= -1;
+	}
+	D3DXVECTOR3 pos(x, y, 0);
+	RECT source = sprite->GetRect();
+	Texture* texture = sprite->texture;
+	device->Draw(pos,texture->textureImage, source, sprite->flip);
 }
 
 void Window::EndDraw()
 {
+	device->End();
 }
 
 bool Window::IsOpen() const
