@@ -9,7 +9,7 @@ public:
 	DrawDevice(HWND window);
 	~DrawDevice();
 	void Begin();
-	void Draw(D3DXVECTOR3 drawPosition, LPDIRECT3DTEXTURE9 texture, RECT resource);
+	void Draw(D3DXVECTOR3 drawPosition, LPDIRECT3DTEXTURE9 texture, RECT resource, bool flip);
 	void End();
 	LPDIRECT3DDEVICE9 GetDevice();
 

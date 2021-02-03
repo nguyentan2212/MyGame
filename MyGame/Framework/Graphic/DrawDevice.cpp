@@ -47,8 +47,21 @@ void DrawDevice::Begin()
 	d3ddv->ColorFill(backBuffer, NULL, D3DCOLOR_XRGB(255, 255, 255));
 }
 
-void DrawDevice::Draw(D3DXVECTOR3 drawPosition, LPDIRECT3DTEXTURE9 texture, RECT resource)
+void DrawDevice::Draw(D3DXVECTOR3 drawPosition, LPDIRECT3DTEXTURE9 texture, RECT resource, bool flip)
 {
+	D3DXMATRIX combined;
+	D3DXMatrixIdentity(&combined);
+	D3DXMATRIX scale;
+	if (flip)
+	{
+		D3DXMatrixScaling(&scale, -1.0f, 1.0f, 1.0f);
+	}
+	else
+	{
+		D3DXMatrixScaling(&scale, 1.0f, 1.0f, 1.0f);
+	}
+	combined *= scale;
+	spriteHandler->SetTransform(&combined);
 	spriteHandler->Begin(D3DXSPRITE_ALPHABLEND);
 	spriteHandler->Draw(texture, &resource, NULL, &drawPosition, D3DCOLOR_XRGB(255, 255, 255));
 	spriteHandler->End();
