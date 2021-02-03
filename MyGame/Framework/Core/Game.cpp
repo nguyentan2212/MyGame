@@ -15,8 +15,8 @@ Game::Game(HINSTANCE _hInstance, int _nCmdShow)
 	nCmdShow = _nCmdShow;
 	window = new Window(hInstance, nCmdShow);
 	
-	texture = new TextureManager(window->GetDrawDevice());
-
+	textureManager = new TextureManager(window->GetDrawDevice());
+	sprite = new Sprite(textureManager->GetTexture("enemy.png"), 22, 27, 10, 187, true);
 	timer = new Timer();
 	timer->Start();
 }
@@ -38,7 +38,9 @@ void Game::Update() {
 void Game::LateUpdate() { }
 
 void Game::Draw() { 
-
+	window->BeginDraw();
+	window->Draw(sprite, 22, 0);
+	window->EndDraw();
 }
 
 bool Game::IsRunning() const
