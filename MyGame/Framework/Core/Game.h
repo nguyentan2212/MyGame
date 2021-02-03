@@ -26,5 +26,6 @@ protected:
     LPWINDOW window;                        // game window
     LPTIMER timer;                          // timer
     GameManager* manager;
-    TextureManager* texture;
+    TextureManager* textureManager;
+    Sprite* sprite;
 };
