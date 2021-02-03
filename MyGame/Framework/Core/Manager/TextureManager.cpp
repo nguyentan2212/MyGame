@@ -14,9 +14,13 @@ TextureManager::TextureManager(const string& _filePath, DrawDevice* _drawDevice)
 	Load();
 }
 
-LPDIRECT3DTEXTURE9 TextureManager::GetTexture(string name)
+Texture* TextureManager::GetTexture(string name)
 {
-	return LPDIRECT3DTEXTURE9();
+	if (textures.find(name) != textures.end())
+	{
+		return textures[name];
+	}
+	return nullptr;
 }
 
 void TextureManager::Load()
@@ -27,7 +31,12 @@ void TextureManager::Load()
 	for (auto& element : texturesJson)
 	{
 		string name = element["name"];
-		LPDIRECT3DTEXTURE9 texture = LoadTexture(folder + name);
+		json color = element["transparentColor"];
+		int red = color["red"];
+		int green = color["green"];
+		int blue = color["blue"];
+		LPDIRECT3DTEXTURE9 textureImage = LoadTexture(folder + name, D3DCOLOR_XRGB(red, green, blue));
+		Texture* texture = new Texture(textureImage, D3DCOLOR_XRGB(red, green, blue));
 		textures.insert(make_pair(name, texture));
 	}
 	mylogger->info("Texture manager properties load succeeded");

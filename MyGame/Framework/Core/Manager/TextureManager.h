@@ -8,6 +8,7 @@
 #include "../../Utility/StringConverter.h"
 #include "Manager.h"
 #include "../../Graphic/DrawDevice.h"
+#include "../../Graphic/Texture.h"
 
 using namespace std;
 
@@ -16,12 +17,12 @@ class TextureManager : Manager
 public:
 	TextureManager(DrawDevice* _drawDevice);
 	TextureManager(const string& _filePath, DrawDevice* _drawDevice);
-	LPDIRECT3DTEXTURE9 GetTexture(string name);
+	Texture* GetTexture(string name);
 
 private:
 	void Load();
-	LPDIRECT3DTEXTURE9 LoadTexture(const string& texturePath, D3DCOLOR transparentColor = D3DCOLOR_XRGB(0, 0, 0));
-	map<string, LPDIRECT3DTEXTURE9> textures;
+	LPDIRECT3DTEXTURE9 LoadTexture(const string& texturePath, D3DCOLOR transparentColor = D3DCOLOR_XRGB(255, 255, 255));
+	map<string, Texture*> textures;
 	LPDIRECT3DDEVICE9 d3ddv;
 	DrawDevice* drawDevice;
 };
