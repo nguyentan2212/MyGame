@@ -155,6 +155,8 @@
     <ClInclude Include="Framework\Core\Timer.h" />
     <ClInclude Include="Framework\Core\Window.h" />
     <ClInclude Include="Framework\Graphic\DrawDevice.h" />
+    <ClInclude Include="Framework\Graphic\Sprite.h" />
+    <ClInclude Include="Framework\Graphic\Texture.h" />
     <ClInclude Include="Framework\Utility\Expected.h" />
     <ClInclude Include="Framework\Utility\json.hpp" />
     <ClInclude Include="Framework\Utility\StringConverter.h" />
@@ -171,6 +173,8 @@
     <ClCompile Include="Framework\Core\Timer.cpp" />
     <ClCompile Include="Framework\Core\Window.cpp" />
     <ClCompile Include="Framework\Graphic\DrawDevice.cpp" />
+    <ClCompile Include="Framework\Graphic\Sprite.cpp" />
+    <ClCompile Include="Framework\Graphic\Texture.cpp" />
     <ClCompile Include="Framework\Utility\StringConverter.cpp" />
     <ClCompile Include="MyGame.cpp" />
   </ItemGroup>
