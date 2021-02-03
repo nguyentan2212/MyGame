@@ -3,7 +3,17 @@
     "folder": "textures/",
     "textures": [
       {
-        "name": "mario.png"
+        "name": "enemy.png",
+        "transparentColor": {
+          "red": 255,
+          "green": 255,
+          "blue": 255
+        },
+        "_transparentColor": {
+          "red": 166,
+          "green": 185,
+          "blue": 255
+        }
       }
     ]
   }
