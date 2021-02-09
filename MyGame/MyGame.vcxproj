@@ -154,6 +154,7 @@
     <ClInclude Include="Framework\Core\Manager\WindowManager.h" />
     <ClInclude Include="Framework\Core\Timer.h" />
     <ClInclude Include="Framework\Core\Window.h" />
+    <ClInclude Include="Framework\Graphic\Animation.h" />
     <ClInclude Include="Framework\Graphic\DrawDevice.h" />
     <ClInclude Include="Framework\Graphic\Sprite.h" />
     <ClInclude Include="Framework\Graphic\Texture.h" />
@@ -172,6 +173,7 @@
     <ClCompile Include="Framework\Core\Manager\WindowManager.cpp" />
     <ClCompile Include="Framework\Core\Timer.cpp" />
     <ClCompile Include="Framework\Core\Window.cpp" />
+    <ClCompile Include="Framework\Graphic\Animation.cpp" />
     <ClCompile Include="Framework\Graphic\DrawDevice.cpp" />
     <ClCompile Include="Framework\Graphic\Sprite.cpp" />
     <ClCompile Include="Framework\Graphic\Texture.cpp" />

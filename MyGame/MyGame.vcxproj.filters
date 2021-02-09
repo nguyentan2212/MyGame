@@ -66,6 +66,9 @@
     <ClInclude Include="Framework\Graphic\Texture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Framework\Graphic\Animation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyGame.cpp">
@@ -102,6 +105,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Framework\Graphic\Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Graphic\Animation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
