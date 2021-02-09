@@ -4,12 +4,12 @@
     "textures": [
       {
         "name": "enemy.png",
-        "transparentColor": {
+        "_transparentColor": {
           "red": 255,
           "green": 255,
           "blue": 255
         },
-        "_transparentColor": {
+        "transparentColor": {
           "red": 166,
           "green": 185,
           "blue": 255
