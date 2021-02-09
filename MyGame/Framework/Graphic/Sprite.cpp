@@ -1,6 +1,6 @@
 #include "Sprite.h"
 
-Sprite::Sprite(Texture* _texture, int _width, int _height, int _x, int _y, bool _flip)
+Sprite::Sprite(Texture* _texture, int _width, int _height, int _x, int _y, bool _flip, int _time)
 {
 	texture = _texture;
 	width = _width;
@@ -8,6 +8,7 @@ Sprite::Sprite(Texture* _texture, int _width, int _height, int _x, int _y, bool 
 	x = _x;
 	y = _y;
 	flip = _flip;
+	time = _time;
 }
 
 RECT Sprite::GetRect()
@@ -18,4 +19,9 @@ RECT Sprite::GetRect()
 	source.right = x + width;
 	source.bottom = y + height;
 	return source;
+}
+
+int Sprite::GetTime()
+{
+	return time;
 }

@@ -4,7 +4,7 @@
 class Sprite
 {
 public:
-	Sprite(Texture* _texture, int _width, int _height, int _x, int _y, bool _flip);
+	Sprite(Texture* _texture, int _width, int _height, int _x, int _y, bool _flip, int _time);
 
 	int width;
 	int height;
@@ -13,6 +13,7 @@ public:
 	bool flip;
 	Texture* texture;
 	RECT GetRect();
+	int GetTime();
 private:
-	
+	int time;
 };
