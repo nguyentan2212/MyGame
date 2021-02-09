@@ -16,7 +16,11 @@ Game::Game(HINSTANCE _hInstance, int _nCmdShow)
 	window = new Window(hInstance, nCmdShow);
 	
 	textureManager = new TextureManager(window->GetDrawDevice());
-	sprite = new Sprite(textureManager->GetTexture("enemy.png"), 22, 27, 10, 187, true);
+	Sprite* sprite = new Sprite(textureManager->GetTexture("enemy.png"), 25, 24, 9, 248, true, 100);
+	Sprite* sprite2 = new Sprite(textureManager->GetTexture("enemy.png"), 25, 30, 44, 242, true, 100);
+	animation = new Animation();
+	animation->AddSprite(sprite);
+	animation->AddSprite(sprite2);
 	timer = new Timer();
 	timer->Start();
 }
@@ -35,11 +39,13 @@ void Game::Update() {
 	}
 }
 
-void Game::LateUpdate() { }
+void Game::LateUpdate() {
+	animation->UpdateFrame(deltaTime);
+}
 
 void Game::Draw() { 
 	window->BeginDraw();
-	window->Draw(sprite, 22, 0);
+	window->Draw(animation->GetCurrentFrame(), 30, 10);
 	window->EndDraw();
 }
 

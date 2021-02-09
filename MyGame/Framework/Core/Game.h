@@ -5,6 +5,7 @@
 #include "Timer.h"
 #include "Manager/TextureManager.h"
 #include "./Manager/GameManager.h"
+#include "../Graphic/Animation.h"
 #include <spdlog/spdlog.h>
 #include <spdlog/sinks/basic_file_sink.h>
 
@@ -27,5 +28,5 @@ protected:
     LPTIMER timer;                          // timer
     GameManager* manager;
     TextureManager* textureManager;
-    Sprite* sprite;
+    Animation* animation;
 };
