@@ -54,6 +54,7 @@ void Timer::Tick()
 	}
 	else
 	{
+		currentTime = GetTickCount64();
 		deltaTime = (currentTime - previousTime);
 		previousTime = currentTime;
 		if (deltaTime < 0.0)
