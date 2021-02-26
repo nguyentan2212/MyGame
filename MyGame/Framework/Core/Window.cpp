@@ -81,7 +81,7 @@ void Window::BeginDraw()
 	device->Begin();
 }
 
-void Window::Draw(Sprite* sprite, int x, int y)
+void Window::Draw(Sprite* sprite, double x, double y)
 {
 	if (sprite->flip)
 	{
@@ -106,6 +106,11 @@ bool Window::IsOpen() const
 DrawDevice* Window::GetDrawDevice()
 {
 	return device;
+}
+
+HWND Window::GetWindow() const
+{
+	return mainWindow;
 }
 
 

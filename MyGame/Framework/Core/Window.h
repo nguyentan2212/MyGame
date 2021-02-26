@@ -18,10 +18,11 @@ public:
     ~Window();
     void Update();
     void BeginDraw();
-    void Draw(Sprite* sprite, int x, int y);
+    void Draw(Sprite* sprite, double x, double y);
     void EndDraw();
     bool IsOpen() const;
     DrawDevice* GetDrawDevice();
+    HWND GetWindow() const;
     static LRESULT CALLBACK msgProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 private:
     HWND mainWindow;
