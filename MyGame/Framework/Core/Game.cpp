@@ -21,31 +21,51 @@ Game::Game(HINSTANCE _hInstance, int _nCmdShow)
 	animation = new Animation();
 	animation->AddSprite(sprite);
 	animation->AddSprite(sprite2);
+
+	input = new KeyInput(hInstance, window->GetWindow());
+
+	object = new GameObject();
+	object->AddAnimation(animation);
+	object->position = Vector2D(30, 20);
+
 	timer = new Timer();
 	timer->Start();
 }
 
 void Game::Update() { 
+	input->CaptureInput();
 	timer->Tick();
 	deltaTime = timer->getDeltaTime();
+	DebugOut(L"[INFO] deltaTime: %f, mspf: %f\n", deltaTime, mspf);
 	if (deltaTime >= mspf)
 	{
-		// log
-		
+		// update
+		object->Update(deltaTime);
 	}
 	else
 	{
-		// log
+		// sleep
+		long sleepTime = (long)deltaTime - (long)mspf;
+		sleepTime = sleepTime < 0 ? 0 : sleepTime;
+		Sleep(sleepTime);
 	}
+	if (input->IsKeyPress(DIK_LEFTARROW))
+	{
+		object->velocity = Vector2D(1, 0);
+	}
+	if (input->IsKeyPress(DIK_RIGHTARROW))
+	{
+		object->velocity = Vector2D(-1, 0);
+	}
+	
 }
 
 void Game::LateUpdate() {
-	animation->UpdateFrame(deltaTime);
 }
 
 void Game::Draw() { 
 	window->BeginDraw();
-	window->Draw(animation->GetCurrentFrame(), 30, 10);
+	window->Draw(object->GetAnimation(0)->GetCurrentFrame(), object->position.GetX(), object->position.GetY());
 	window->EndDraw();
 }
 
