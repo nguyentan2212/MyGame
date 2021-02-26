@@ -2,10 +2,6 @@
 
 Game::Game(HINSTANCE _hInstance, int _nCmdShow)
 {
-	auto mylogger = spdlog::basic_logger_mt("mylogger", "logs/mylogfile.txt");
-	mylogger->info("***********************************");
-	mylogger->info("Game started");
-
 	manager = new GameManager();
 	fps = manager->fps;
 	mspf = 1000.0 / fps;

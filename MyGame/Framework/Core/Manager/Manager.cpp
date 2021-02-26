@@ -3,19 +3,16 @@
 Manager::Manager(const string& _filePath)
 {
 	filePath = _filePath;
-	auto mylogger = spdlog::get("mylogger");
 	if (IsPathExist(filePath))
 	{
 		fstream f(filePath, ios::in);
 		json managerFile;
 		f >> managerFile;
 		manager = managerFile["manager"];
-		mylogger->info("Manager file load succeeded. File path: " + _filePath);
 	}
 	else
 	{
 		// log
-		mylogger->error("Manager file not found. File path: "+_filePath);
 	}
 }
 

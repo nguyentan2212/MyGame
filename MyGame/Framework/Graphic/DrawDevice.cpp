@@ -2,7 +2,6 @@
 
 DrawDevice::DrawDevice(HWND window)
 {
-	auto mylogger = spdlog::get("mylogger");
 
 	LPDIRECT3D9 d3d = Direct3DCreate9(D3D_SDK_VERSION);
 	D3DPRESENT_PARAMETERS d3dpp;
@@ -28,12 +27,12 @@ DrawDevice::DrawDevice(HWND window)
 
 	if (d3ddv == NULL)
 	{
-		mylogger->error("Draw device constructor failed");
+		
 		return;
 	}
 	d3ddv->GetBackBuffer(0, 0, D3DBACKBUFFER_TYPE_MONO, &backBuffer);
 	D3DXCreateSprite(d3ddv, &spriteHandler);
-	mylogger->info("Draw device constructor succeeded");
+	
 }
 
 DrawDevice::~DrawDevice()

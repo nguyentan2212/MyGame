@@ -3,7 +3,6 @@
 #include <d3d9.h>
 #include <d3dx9.h>
 #include <map>
-#include <spdlog/spdlog.h>
 #include "../../Utility/json.hpp"
 #include "../../Utility/StringConverter.h"
 #include "Manager.h"

@@ -25,7 +25,6 @@ Texture* TextureManager::GetTexture(string name)
 
 void TextureManager::Load()
 {
-	auto mylogger = spdlog::get("mylogger");
 	auto texturesJson = manager["textures"];
 	string folder = manager["folder"];
 	for (auto& element : texturesJson)
@@ -39,12 +38,10 @@ void TextureManager::Load()
 		Texture* texture = new Texture(textureImage, D3DCOLOR_XRGB(red, green, blue));
 		textures.insert(make_pair(name, texture));
 	}
-	mylogger->info("Texture manager properties load succeeded");
 }
 
 LPDIRECT3DTEXTURE9 TextureManager::LoadTexture(const string& texturePath, D3DCOLOR transparentColor)
 {
-	auto mylogger = spdlog::get("mylogger");
 	D3DXIMAGE_INFO info;
 	LPDIRECT3DTEXTURE9 texture;
 	wstring path = ultility::StringConverter::s2ws(texturePath);
@@ -52,7 +49,7 @@ LPDIRECT3DTEXTURE9 TextureManager::LoadTexture(const string& texturePath, D3DCOL
 	HRESULT result = D3DXGetImageInfoFromFile(lpPath, &info);
 	if (result != D3D_OK)
 	{
-		mylogger->error("Get image texture failed. Texture path: " + texturePath);
+		
 		return NULL;
 	}
 	result = D3DXCreateTextureFromFileEx(
@@ -73,9 +70,9 @@ LPDIRECT3DTEXTURE9 TextureManager::LoadTexture(const string& texturePath, D3DCOL
 	
 	if (result != D3D_OK)
 	{
-		mylogger->error("Load texture failed. Texture path: " + texturePath);
+		
 		return NULL;
 	}
-	mylogger->info("Load texture succeeded. Texture path: " + texturePath);
+	
 	return texture;
 }

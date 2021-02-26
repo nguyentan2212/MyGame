@@ -1,6 +1,5 @@
 #pragma once
 #define PATH "manager/WindowManager.json"
-#include <spdlog/spdlog.h>
 #include "../../Utility/json.hpp"
 #include "Manager.h"
 

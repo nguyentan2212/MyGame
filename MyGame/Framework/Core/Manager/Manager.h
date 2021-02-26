@@ -1,8 +1,6 @@
 #pragma once
 #include <string>
 #include <fstream>
-#include <sys/stat.h>
-#include <spdlog/spdlog.h>
 #include "../../Utility/json.hpp"
 using namespace std;
 using namespace nlohmann;

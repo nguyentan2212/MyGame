@@ -9,8 +9,6 @@
 #include "GameObject.h"
 #include "KeyInput.h"
 #include "../Utility/Debug.h"
-#include <spdlog/spdlog.h>
-#include <spdlog/sinks/basic_file_sink.h>
 
 class Game
 {

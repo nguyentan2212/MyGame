@@ -12,7 +12,5 @@ GameManager::GameManager(const string& _filePath) : Manager(_filePath)
 
 void GameManager::Load()
 {
-	auto mylogger = spdlog::get("mylogger");
 	fps = manager["fps"];
-	mylogger->info("Game manager properties load succeeded");
 }
