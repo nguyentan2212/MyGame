@@ -69,6 +69,18 @@
     <ClInclude Include="Framework\Graphic\Animation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Framework\Core\KeyInput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Core\GameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Utility\Vector2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Utility\Debug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyGame.cpp">
@@ -108,6 +120,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Framework\Graphic\Animation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Core\KeyInput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Core\GameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Utility\Vector2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Utility\Debug.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -148,6 +148,8 @@
   <ItemGroup>
     <ClInclude Include="framework.h" />
     <ClInclude Include="Framework\Core\Game.h" />
+    <ClInclude Include="Framework\Core\GameObject.h" />
+    <ClInclude Include="Framework\Core\KeyInput.h" />
     <ClInclude Include="Framework\Core\Manager\GameManager.h" />
     <ClInclude Include="Framework\Core\Manager\Manager.h" />
     <ClInclude Include="Framework\Core\Manager\TextureManager.h" />
@@ -158,15 +160,19 @@
     <ClInclude Include="Framework\Graphic\DrawDevice.h" />
     <ClInclude Include="Framework\Graphic\Sprite.h" />
     <ClInclude Include="Framework\Graphic\Texture.h" />
+    <ClInclude Include="Framework\Utility\Debug.h" />
     <ClInclude Include="Framework\Utility\Expected.h" />
     <ClInclude Include="Framework\Utility\json.hpp" />
     <ClInclude Include="Framework\Utility\StringConverter.h" />
+    <ClInclude Include="Framework\Utility\Vector2D.h" />
     <ClInclude Include="MyGame.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Framework\Core\Game.cpp" />
+    <ClCompile Include="Framework\Core\GameObject.cpp" />
+    <ClCompile Include="Framework\Core\KeyInput.cpp" />
     <ClCompile Include="Framework\Core\Manager\GameManager.cpp" />
     <ClCompile Include="Framework\Core\Manager\Manager.cpp" />
     <ClCompile Include="Framework\Core\Manager\TextureManager.cpp" />
@@ -177,7 +183,9 @@
     <ClCompile Include="Framework\Graphic\DrawDevice.cpp" />
     <ClCompile Include="Framework\Graphic\Sprite.cpp" />
     <ClCompile Include="Framework\Graphic\Texture.cpp" />
+    <ClCompile Include="Framework\Utility\Debug.cpp" />
     <ClCompile Include="Framework\Utility\StringConverter.cpp" />
+    <ClCompile Include="Framework\Utility\Vector2D.cpp" />
     <ClCompile Include="MyGame.cpp" />
   </ItemGroup>
   <ItemGroup>
