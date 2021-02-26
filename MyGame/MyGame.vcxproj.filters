@@ -13,6 +13,21 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{950d111d-03e0-47e8-a110-e10b73c0ca6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Core">
+      <UniqueIdentifier>{4407a4cc-3c81-4e2c-821c-5a127b5874b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Graphic">
+      <UniqueIdentifier>{914cf1cc-4e91-4ca4-b77c-48228cbbb9e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Ultility">
+      <UniqueIdentifier>{20ffd51b-2bbe-4b26-95c2-ada1df248c84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Core\Manager">
+      <UniqueIdentifier>{50e4c1cb-b6c8-4148-a18c-10ca677255f6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -27,112 +42,112 @@
     <ClInclude Include="MyGame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Framework\Core\Game.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Framework\Core\Manager\WindowManager.h">
+      <Filter>Framework\Core\Manager</Filter>
     </ClInclude>
     <ClInclude Include="Framework\Core\Window.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Framework\Utility\StringConverter.h">
-      <Filter>Header Files</Filter>
+      <Filter>Framework\Core</Filter>
     </ClInclude>
     <ClInclude Include="Framework\Core\Timer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Framework\Utility\Expected.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Framework\Utility\json.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Framework\Core\Manager\Manager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Framework\Core\Manager\GameManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Framework\Core\Manager\WindowManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Framework\Graphic\DrawDevice.h">
-      <Filter>Header Files</Filter>
+      <Filter>Framework\Core</Filter>
     </ClInclude>
     <ClInclude Include="Framework\Core\Manager\TextureManager.h">
-      <Filter>Header Files</Filter>
+      <Filter>Framework\Core\Manager</Filter>
     </ClInclude>
-    <ClInclude Include="Framework\Graphic\Sprite.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Framework\Graphic\Texture.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Framework\Graphic\Animation.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Framework\Core\Manager\Manager.h">
+      <Filter>Framework\Core\Manager</Filter>
     </ClInclude>
     <ClInclude Include="Framework\Core\KeyInput.h">
-      <Filter>Header Files</Filter>
+      <Filter>Framework\Core</Filter>
     </ClInclude>
     <ClInclude Include="Framework\Core\GameObject.h">
-      <Filter>Header Files</Filter>
+      <Filter>Framework\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Core\Manager\GameManager.h">
+      <Filter>Framework\Core\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Core\Game.h">
+      <Filter>Framework\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Graphic\Animation.h">
+      <Filter>Framework\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Graphic\DrawDevice.h">
+      <Filter>Framework\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Graphic\Sprite.h">
+      <Filter>Framework\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Graphic\Texture.h">
+      <Filter>Framework\Graphic</Filter>
     </ClInclude>
     <ClInclude Include="Framework\Utility\Vector2D.h">
-      <Filter>Header Files</Filter>
+      <Filter>Framework\Ultility</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Utility\StringConverter.h">
+      <Filter>Framework\Ultility</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Utility\json.hpp">
+      <Filter>Framework\Ultility</Filter>
     </ClInclude>
     <ClInclude Include="Framework\Utility\Debug.h">
-      <Filter>Header Files</Filter>
+      <Filter>Framework\Ultility</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Utility\Expected.h">
+      <Filter>Framework\Ultility</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Framework\Core\Game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Framework\Core\Window.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Framework\Utility\StringConverter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Framework\Core\Timer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Framework\Core\Manager\Manager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Framework\Core\Manager\GameManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Framework\Core\Manager\WindowManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Framework\Graphic\DrawDevice.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Framework\Core\Manager\TextureManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Framework\Graphic\Sprite.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Framework\Graphic\Texture.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Framework\Graphic\Animation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Framework\Core\KeyInput.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Framework\Core\GameObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Framework\Utility\Vector2D.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Framework\Graphic</Filter>
     </ClCompile>
     <ClCompile Include="Framework\Utility\Debug.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Framework\Ultility</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Graphic\DrawDevice.cpp">
+      <Filter>Framework\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Core\Game.cpp">
+      <Filter>Framework\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Core\GameObject.cpp">
+      <Filter>Framework\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Core\Manager\GameManager.cpp">
+      <Filter>Framework\Core\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Core\KeyInput.cpp">
+      <Filter>Framework\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Core\Manager\Manager.cpp">
+      <Filter>Framework\Core\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Graphic\Sprite.cpp">
+      <Filter>Framework\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Utility\StringConverter.cpp">
+      <Filter>Framework\Ultility</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Graphic\Texture.cpp">
+      <Filter>Framework\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Core\Manager\TextureManager.cpp">
+      <Filter>Framework\Core\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Core\Timer.cpp">
+      <Filter>Framework\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Utility\Vector2D.cpp">
+      <Filter>Framework\Ultility</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Core\Window.cpp">
+      <Filter>Framework\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Core\Manager\WindowManager.cpp">
+      <Filter>Framework\Core\Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
