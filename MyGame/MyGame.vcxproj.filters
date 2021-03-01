@@ -28,6 +28,9 @@
     <Filter Include="Framework\Core\Manager">
       <UniqueIdentifier>{50e4c1cb-b6c8-4148-a18c-10ca677255f6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Test Game">
+      <UniqueIdentifier>{ef7f4372-0276-4004-8e0d-8706d4aabe65}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -96,6 +99,9 @@
     <ClInclude Include="Framework\Utility\Expected.h">
       <Filter>Framework\Ultility</Filter>
     </ClInclude>
+    <ClInclude Include="TestGame\TestGame.h">
+      <Filter>Test Game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyGame.cpp">
@@ -148,6 +154,9 @@
     </ClCompile>
     <ClCompile Include="Framework\Core\Manager\WindowManager.cpp">
       <Filter>Framework\Core\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="TestGame\TestGame.cpp">
+      <Filter>Test Game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
