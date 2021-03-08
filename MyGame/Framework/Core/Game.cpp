@@ -2,19 +2,10 @@
 
 Game::Game(HINSTANCE _hInstance, int _nCmdShow)
 {
-	manager = new Manager();
-	manager->Initialize();
-	fps = manager->GetFPS();
-	mspf = 1000.0 / fps;
 	deltaTime = 0;
 
 	hInstance = _hInstance;
 	nCmdShow = _nCmdShow;
-	window = new Window(hInstance, nCmdShow, manager->GetTitle(), manager->GetWidth(), manager->GetHeight());
-
-	manager->LoadGraphic(window->GetDrawDevice());
-
-	input = new KeyInput(hInstance, window->GetWindow());
 
 	timer = new Timer();
 	timer->Start();

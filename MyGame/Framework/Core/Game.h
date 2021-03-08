@@ -13,6 +13,7 @@ class Game
 {
 public:
     Game(HINSTANCE _hInstance, int _nCmdShow);
+    virtual void Initialize() = 0;
     virtual void Update();
     virtual void LateUpdate();
     virtual void Draw();
@@ -29,5 +30,5 @@ protected:
     Manager* manager;
     KeyInput* input;
     
-    map<string,GameObject*> objects;
+    vector<GameObject*> objects;
 };
