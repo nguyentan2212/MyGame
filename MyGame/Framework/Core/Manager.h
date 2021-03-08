@@ -5,11 +5,11 @@
 #include <d3d9.h>
 #include <d3dx9.h>
 #include <map>
-#include "../../Graphic/DrawDevice.h"
-#include "../../Graphic/Texture.h"
-
-#include "../../Utility/json.hpp"
-#include "../../Utility/StringConverter.h"
+#include "../Graphic/DrawDevice.h"
+#include "../Graphic/Texture.h"
+#include "../Graphic/Animation.h"
+#include "../Utility/json.hpp"
+#include "../Utility/StringConverter.h"
 
 using namespace std;
 using namespace nlohmann;
@@ -21,6 +21,7 @@ public:
 	void Initialize();
 	void LoadGraphic(DrawDevice* _drawDevice);
 	Texture* GetTexture(string name);
+	Animation* GetAnimation(string name);
 
 	int GetFPS() { return fps; }
 	std::string GetTitle() { return title; }
@@ -40,4 +41,5 @@ protected:
 	map<string, Texture*> textures;
 	LPDIRECT3DDEVICE9 d3ddv;
 	DrawDevice* drawDevice;
+	map<string, Animation*> animations;
 };

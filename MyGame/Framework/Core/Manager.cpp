@@ -39,7 +39,18 @@ void Manager::LoadGraphic(DrawDevice* _drawDevice)
 		textures.insert(make_pair(name, texture));
 	}
 
-
+	for (auto& element : manager["animations"])
+	{
+		string name = element["name"];
+		Animation* animation = new Animation();
+		for (auto& item : element["sprites"])
+		{
+			Texture* texture = GetTexture(item["texture"]);
+			Sprite* sprite = new Sprite(texture, item["width"], item["height"], item["x"], item["y"], item["flip"], item["time"]);
+			animation->AddSprite(sprite);
+		}
+		animations.insert(make_pair(name, animation));
+	}
 }
 
 LPDIRECT3DTEXTURE9 Manager::LoadTexture(const string& texturePath, D3DCOLOR transparentColor)
@@ -84,6 +95,15 @@ Texture* Manager::GetTexture(string name)
 	if (textures.find(name) != textures.end())
 	{
 		return textures[name];
+	}
+	return nullptr;
+}
+
+Animation* Manager::GetAnimation(string name)
+{
+	if (animations.find(name) != animations.end())
+	{
+		return animations[name];
 	}
 	return nullptr;
 }
