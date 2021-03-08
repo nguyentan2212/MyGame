@@ -10,6 +10,7 @@
 #include "../Graphic/Animation.h"
 #include "../Utility/json.hpp"
 #include "../Utility/StringConverter.h"
+#include "GameObject.h"
 
 using namespace std;
 using namespace nlohmann;
@@ -18,11 +19,13 @@ class Manager
 {
 public:
 	Manager(const string& _filePath = GAME_PATH);
-	void Initialize();
-	void LoadGraphic(DrawDevice* _drawDevice);
+	virtual void LoadWindow() = 0;
+	virtual void LoadGraphic(DrawDevice* _drawDevice) = 0;
+	virtual vector<GameObject*> LoadGameObject() = 0;
+
 	Texture* GetTexture(string name);
 	Animation* GetAnimation(string name);
-
+	
 	int GetFPS() { return fps; }
 	std::string GetTitle() { return title; }
 	int GetWidth() { return width; }
