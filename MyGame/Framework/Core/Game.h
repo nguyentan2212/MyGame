@@ -3,7 +3,7 @@
 #include <d3dx9.h>
 #include "Window.h"
 #include "Timer.h"
-#include "./Manager/Manager.h"
+#include "Manager.h"
 #include "../Graphic/Animation.h"
 #include "GameObject.h"
 #include "KeyInput.h"
@@ -29,4 +29,5 @@ protected:
     Manager* manager;
     KeyInput* input;
     
+    map<string,GameObject*> objects;
 };
