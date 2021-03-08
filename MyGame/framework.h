@@ -14,4 +14,4 @@
 #include <memory.h>
 #include <tchar.h>
 
-#include "Framework/Core/Game.h"
+#include "TestGame/TestGame.h"
