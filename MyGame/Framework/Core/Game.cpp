@@ -12,7 +12,7 @@ Game::Game(HINSTANCE _hInstance, int _nCmdShow)
 	nCmdShow = _nCmdShow;
 	window = new Window(hInstance, nCmdShow, manager->GetTitle(), manager->GetWidth(), manager->GetHeight());
 
-	manager->LoadTexture(window->GetDrawDevice());
+	manager->LoadGraphic(window->GetDrawDevice());
 
 	input = new KeyInput(hInstance, window->GetWindow());
 
