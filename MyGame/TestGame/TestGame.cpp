@@ -2,9 +2,24 @@
 
 TestGame::TestGame(HINSTANCE _hInstance, int _nCmdShow):Game(_hInstance, _nCmdShow)
 {
-	GameObject* object = new GameObject();
-	object->AddAnimation(manager->GetAnimation("enemy fly to right"));
-	object->position = Vector2D(30, 20);
+
+}
+
+void TestGame::Initialize()
+{
+	manager = new TestGameManager();
+	manager->LoadWindow();
+	fps = manager->GetFPS();
+	mspf = 1000.0 / fps;
+
+	window = new Window(hInstance, nCmdShow, manager->GetTitle(), manager->GetWidth(), manager->GetHeight());
+
+	manager->LoadGraphic(window->GetDrawDevice());
+
+	objects = manager->LoadGameObject();
+
+	input = new KeyInput(hInstance, window->GetWindow());
+	
 
 }
 
@@ -17,7 +32,7 @@ void TestGame::Update()
 	if (deltaTime >= mspf)
 	{
 		// update
-		object->Update(deltaTime);
+		objects[0]->Update(deltaTime);
 	}
 	else
 	{
@@ -28,11 +43,11 @@ void TestGame::Update()
 	}
 	if (input->IsKeyPress(DIK_LEFTARROW))
 	{
-		object->velocity = Vector2D(0.1, 0);
+		objects[0]->velocity = Vector2D(0.1, 0);
 	}
 	if (input->IsKeyPress(DIK_RIGHTARROW))
 	{
-		object->velocity = Vector2D(-0.1, 0);
+		objects[0]->velocity = Vector2D(-0.1, 0);
 	}
 
 }
@@ -44,6 +59,6 @@ void TestGame::LateUpdate()
 void TestGame::Draw()
 {
 	window->BeginDraw();
-	window->Draw(object->GetAnimation(0)->GetCurrentFrame(), object->position.GetX(), object->position.GetY());
+	window->Draw(objects[0]->GetAnimation(0)->GetCurrentFrame(), objects[0]->position.GetX(), objects[0]->position.GetY());
 	window->EndDraw();
 }
