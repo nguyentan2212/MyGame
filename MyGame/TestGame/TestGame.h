@@ -8,8 +8,5 @@ public:
 	void Update();
 	void LateUpdate();
 	void Draw();
-
-private:
-	GameObject* object;
-	Animation* animation;
+	
 };
