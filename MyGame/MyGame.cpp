@@ -14,6 +14,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     Game* game;
     game = new TestGame(hInstance, nCmdShow);
+    game->Initialize();
     while (game->IsRunning())
     {
         game->Update();
