@@ -41,7 +41,11 @@
     ],
     "gameObjects": [
       {
-        "name": "enemy",
+        "type": 0,
+        "position": {
+          "x": 30,
+          "y": 30
+        },
         "animations": [
           {
             "name": "enemy fly to right"
