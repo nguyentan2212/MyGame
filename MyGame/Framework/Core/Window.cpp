@@ -1,14 +1,11 @@
 #include "Window.h"
 
-Window::Window(HINSTANCE _hInstance, int _nCmdShow)
+Window::Window(HINSTANCE _hInstance, int _nCmdShow, std::string title, int _width, int _height)
 {
-	manager = new WindowManager();
-	wstring ws = ultility::StringConverter::s2ws(manager->title);
+	wstring ws = ultility::StringConverter::s2ws(title);
 	lpWindowTitle = ws.c_str();
-	wstring ws2 = ultility::StringConverter::s2ws(manager->className);
-	lpWindowClass = ws2.c_str();
-	width = manager->width;
-	height = manager->height;
+	width = _width;
+	height = _height;
 	
 	hInstance = _hInstance;
 	nCmdShow = _nCmdShow;
@@ -34,7 +31,7 @@ void Window::Register()
 	wcex.hCursor = LoadCursor(nullptr, IDC_ARROW);
 	wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW);
 	wcex.lpszMenuName = NULL;
-	wcex.lpszClassName = lpWindowClass;
+	wcex.lpszClassName = L"MyGame";
 	wcex.hIconSm = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(ICONSMALL));
 
 	if (!RegisterClassEx(&wcex))
@@ -49,7 +46,7 @@ void Window::Register()
 void Window::Init()
 {
 
-	mainWindow = CreateWindowW(lpWindowClass, lpWindowTitle, WS_OVERLAPPEDWINDOW,
+	mainWindow = CreateWindowW(L"MyGame", lpWindowTitle, WS_OVERLAPPEDWINDOW,
 		CW_USEDEFAULT, 0, width, height, nullptr, nullptr, hInstance, nullptr);
 	if (!mainWindow)
 	{
