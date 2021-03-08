@@ -7,6 +7,7 @@
 #include <map>
 #include "../../Graphic/DrawDevice.h"
 #include "../../Graphic/Texture.h"
+
 #include "../../Utility/json.hpp"
 #include "../../Utility/StringConverter.h"
 
@@ -18,7 +19,7 @@ class Manager
 public:
 	Manager(const string& _filePath = GAME_PATH);
 	void Initialize();
-	void LoadTexture(DrawDevice* _drawDevice);
+	void LoadGraphic(DrawDevice* _drawDevice);
 	Texture* GetTexture(string name);
 
 	int GetFPS() { return fps; }

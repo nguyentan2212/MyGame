@@ -24,7 +24,7 @@ void Manager::Initialize()
 	height = manager["height"];
 }
 
-void Manager::LoadTexture(DrawDevice* _drawDevice)
+void Manager::LoadGraphic(DrawDevice* _drawDevice)
 {
 	d3ddv = _drawDevice->GetDevice();
 	for (auto& element : manager["textures"])
@@ -38,6 +38,8 @@ void Manager::LoadTexture(DrawDevice* _drawDevice)
 		Texture* texture = new Texture(textureImage, D3DCOLOR_XRGB(red, green, blue));
 		textures.insert(make_pair(name, texture));
 	}
+
+
 }
 
 LPDIRECT3DTEXTURE9 Manager::LoadTexture(const string& texturePath, D3DCOLOR transparentColor)

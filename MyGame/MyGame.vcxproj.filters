@@ -25,9 +25,6 @@
     <Filter Include="Framework\Ultility">
       <UniqueIdentifier>{20ffd51b-2bbe-4b26-95c2-ada1df248c84}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Framework\Core\Manager">
-      <UniqueIdentifier>{50e4c1cb-b6c8-4148-a18c-10ca677255f6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Test Game">
       <UniqueIdentifier>{ef7f4372-0276-4004-8e0d-8706d4aabe65}</UniqueIdentifier>
     </Filter>
@@ -50,9 +47,6 @@
     </ClInclude>
     <ClInclude Include="Framework\Core\Timer.h">
       <Filter>Framework\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Framework\Core\Manager\Manager.h">
-      <Filter>Framework\Core\Manager</Filter>
     </ClInclude>
     <ClInclude Include="Framework\Core\KeyInput.h">
       <Filter>Framework\Core</Filter>
@@ -93,6 +87,9 @@
     <ClInclude Include="TestGame\TestGame.h">
       <Filter>Test Game</Filter>
     </ClInclude>
+    <ClInclude Include="Framework\Core\Manager\Manager.h">
+      <Filter>Framework\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyGame.cpp">
@@ -116,9 +113,6 @@
     <ClCompile Include="Framework\Core\KeyInput.cpp">
       <Filter>Framework\Core</Filter>
     </ClCompile>
-    <ClCompile Include="Framework\Core\Manager\Manager.cpp">
-      <Filter>Framework\Core\Manager</Filter>
-    </ClCompile>
     <ClCompile Include="Framework\Graphic\Sprite.cpp">
       <Filter>Framework\Graphic</Filter>
     </ClCompile>
@@ -139,6 +133,9 @@
     </ClCompile>
     <ClCompile Include="TestGame\TestGame.cpp">
       <Filter>Test Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Core\Manager\Manager.cpp">
+      <Filter>Framework\Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
