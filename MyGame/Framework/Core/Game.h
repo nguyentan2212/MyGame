@@ -29,7 +29,6 @@ protected:
     LPTIMER timer;                          // timer
     GameManager* manager;
     TextureManager* textureManager;
-    
     KeyInput* input;
     
 };
