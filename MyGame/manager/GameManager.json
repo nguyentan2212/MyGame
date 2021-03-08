@@ -13,6 +13,41 @@
           "blue": 255
         }
       }
+    ],
+    "animations": [
+      {
+        "name": "enemy fly to right",
+        "sprites": [
+          {
+            "texture": "enemy.png",
+            "x": 9,
+            "y": 248,
+            "width": 25,
+            "height": 24,
+            "flip": true,
+            "time": 100
+          },
+          {
+            "texture": "enemy.png",
+            "x": 44,
+            "y": 242,
+            "width": 25,
+            "height": 30,
+            "flip": true,
+            "time": 100
+          }
+        ]
+      }
+    ],
+    "gameObjects": [
+      {
+        "name": "enemy",
+        "animations": [
+          {
+            "name": "enemy fly to right"
+          }
+        ]
+      }
     ]
   }
 }
