@@ -166,6 +166,7 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TestGame\TestGame.h" />
+    <ClInclude Include="TestGame\TestGameManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Framework\Core\Game.cpp" />
@@ -183,6 +184,7 @@
     <ClCompile Include="Framework\Utility\Vector2D.cpp" />
     <ClCompile Include="MyGame.cpp" />
     <ClCompile Include="TestGame\TestGame.cpp" />
+    <ClCompile Include="TestGame\TestGameManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MyGame.rc" />

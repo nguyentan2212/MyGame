@@ -90,6 +90,9 @@
     <ClInclude Include="Framework\Core\Manager.h">
       <Filter>Framework\Core</Filter>
     </ClInclude>
+    <ClInclude Include="TestGame\TestGameManager.h">
+      <Filter>Test Game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyGame.cpp">
@@ -136,6 +139,9 @@
     </ClCompile>
     <ClCompile Include="Framework\Core\Manager.cpp">
       <Filter>Framework\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="TestGame\TestGameManager.cpp">
+      <Filter>Test Game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
