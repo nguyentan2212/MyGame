@@ -3,8 +3,8 @@
 TestGame::TestGame(HINSTANCE _hInstance, int _nCmdShow):Game(_hInstance, _nCmdShow)
 {
 	
-	Sprite* sprite = new Sprite(textureManager->GetTexture("enemy.png"), 25, 24, 9, 248, true, 100);
-	Sprite* sprite2 = new Sprite(textureManager->GetTexture("enemy.png"), 25, 30, 44, 242, true, 100);
+	Sprite* sprite = new Sprite(manager->GetTexture("enemy.png"), 25, 24, 9, 248, true, 100);
+	Sprite* sprite2 = new Sprite(manager->GetTexture("enemy.png"), 25, 30, 44, 242, true, 100);
 	animation = new Animation();
 	animation->AddSprite(sprite);
 	animation->AddSprite(sprite2);

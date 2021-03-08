@@ -1,5 +1,18 @@
 {
   "manager": {
-    "fps": 70
+    "fps": 70,
+    "title": "My game",
+    "width": 800,
+    "height": 800,
+    "textures": [
+      {
+        "name": "enemy.png",
+        "transparentColor": {
+          "red": 166,
+          "green": 185,
+          "blue": 255
+        }
+      }
+    ]
   }
 }

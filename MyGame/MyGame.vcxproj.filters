@@ -45,17 +45,11 @@
     <ClInclude Include="MyGame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Framework\Core\Manager\WindowManager.h">
-      <Filter>Framework\Core\Manager</Filter>
-    </ClInclude>
     <ClInclude Include="Framework\Core\Window.h">
       <Filter>Framework\Core</Filter>
     </ClInclude>
     <ClInclude Include="Framework\Core\Timer.h">
       <Filter>Framework\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Framework\Core\Manager\TextureManager.h">
-      <Filter>Framework\Core\Manager</Filter>
     </ClInclude>
     <ClInclude Include="Framework\Core\Manager\Manager.h">
       <Filter>Framework\Core\Manager</Filter>
@@ -134,9 +128,6 @@
     <ClCompile Include="Framework\Graphic\Texture.cpp">
       <Filter>Framework\Graphic</Filter>
     </ClCompile>
-    <ClCompile Include="Framework\Core\Manager\TextureManager.cpp">
-      <Filter>Framework\Core\Manager</Filter>
-    </ClCompile>
     <ClCompile Include="Framework\Core\Timer.cpp">
       <Filter>Framework\Core</Filter>
     </ClCompile>
@@ -145,9 +136,6 @@
     </ClCompile>
     <ClCompile Include="Framework\Core\Window.cpp">
       <Filter>Framework\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Framework\Core\Manager\WindowManager.cpp">
-      <Filter>Framework\Core\Manager</Filter>
     </ClCompile>
     <ClCompile Include="TestGame\TestGame.cpp">
       <Filter>Test Game</Filter>

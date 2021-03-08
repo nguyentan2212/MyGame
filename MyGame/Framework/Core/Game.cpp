@@ -3,15 +3,16 @@
 Game::Game(HINSTANCE _hInstance, int _nCmdShow)
 {
 	manager = new Manager();
+	manager->Initialize();
 	fps = manager->GetFPS();
 	mspf = 1000.0 / fps;
 	deltaTime = 0;
 
 	hInstance = _hInstance;
 	nCmdShow = _nCmdShow;
-	window = new Window(hInstance, nCmdShow);
+	window = new Window(hInstance, nCmdShow, manager->GetTitle(), manager->GetWidth(), manager->GetHeight());
 
-	textureManager = new TextureManager(window->GetDrawDevice());
+	manager->LoadTexture(window->GetDrawDevice());
 
 	input = new KeyInput(hInstance, window->GetWindow());
 
