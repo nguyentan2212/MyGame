@@ -2,8 +2,8 @@
 
 Game::Game(HINSTANCE _hInstance, int _nCmdShow)
 {
-	manager = new GameManager();
-	fps = manager->fps;
+	manager = new Manager();
+	fps = manager->GetFPS();
 	mspf = 1000.0 / fps;
 	deltaTime = 0;
 

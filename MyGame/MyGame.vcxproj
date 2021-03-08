@@ -150,7 +150,6 @@
     <ClInclude Include="Framework\Core\Game.h" />
     <ClInclude Include="Framework\Core\GameObject.h" />
     <ClInclude Include="Framework\Core\KeyInput.h" />
-    <ClInclude Include="Framework\Core\Manager\GameManager.h" />
     <ClInclude Include="Framework\Core\Manager\Manager.h" />
     <ClInclude Include="Framework\Core\Manager\TextureManager.h" />
     <ClInclude Include="Framework\Core\Manager\WindowManager.h" />
@@ -174,7 +173,6 @@
     <ClCompile Include="Framework\Core\Game.cpp" />
     <ClCompile Include="Framework\Core\GameObject.cpp" />
     <ClCompile Include="Framework\Core\KeyInput.cpp" />
-    <ClCompile Include="Framework\Core\Manager\GameManager.cpp" />
     <ClCompile Include="Framework\Core\Manager\Manager.cpp" />
     <ClCompile Include="Framework\Core\Manager\TextureManager.cpp" />
     <ClCompile Include="Framework\Core\Manager\WindowManager.cpp" />

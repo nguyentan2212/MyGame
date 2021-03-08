@@ -4,7 +4,7 @@
 #include "Window.h"
 #include "Timer.h"
 #include "Manager/TextureManager.h"
-#include "./Manager/GameManager.h"
+#include "./Manager/Manager.h"
 #include "../Graphic/Animation.h"
 #include "GameObject.h"
 #include "KeyInput.h"
@@ -27,7 +27,7 @@ protected:
     double deltaTime;						// game update rate
     LPWINDOW window;                        // game window
     LPTIMER timer;                          // timer
-    GameManager* manager;
+    Manager* manager;
     TextureManager* textureManager;
     KeyInput* input;
     

@@ -66,9 +66,6 @@
     <ClInclude Include="Framework\Core\GameObject.h">
       <Filter>Framework\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Framework\Core\Manager\GameManager.h">
-      <Filter>Framework\Core\Manager</Filter>
-    </ClInclude>
     <ClInclude Include="Framework\Core\Game.h">
       <Filter>Framework\Core</Filter>
     </ClInclude>
@@ -121,9 +118,6 @@
     </ClCompile>
     <ClCompile Include="Framework\Core\GameObject.cpp">
       <Filter>Framework\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Framework\Core\Manager\GameManager.cpp">
-      <Filter>Framework\Core\Manager</Filter>
     </ClCompile>
     <ClCompile Include="Framework\Core\KeyInput.cpp">
       <Filter>Framework\Core</Filter>
