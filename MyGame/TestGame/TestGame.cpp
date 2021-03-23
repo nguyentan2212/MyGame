@@ -17,11 +17,20 @@ void TestGame::Initialize()
 	manager->LoadGraphic(window->GetDrawDevice());
 
 	objects = manager->LoadGameObject();
+	input = new KeyInput();
+	RunCommand* runLeft = new RunCommand(objects[0], -1, "run left", VK_LEFT, KeyState::JustPressed);
+	RunCommand* runRight = new RunCommand(objects[0], 1, "run right", VK_RIGHT, KeyState::JustPressed);
+	RunCommand* indieLeft = new RunCommand(objects[0], 0, "indie left", VK_LEFT, KeyState::JustReleased);
+	RunCommand* indieRight = new RunCommand(objects[0], 0, "indie right", VK_RIGHT, KeyState::JustReleased);
+	input->AddCommand(runLeft);
+	input->AddCommand(runRight);
+	input->AddCommand(indieLeft);
+	input->AddCommand(indieRight);
 }
 
 void TestGame::Update()
 {
-	
+	input->AcquireInput();
 	timer->Tick();
 	deltaTime = timer->getDeltaTime();
 	DebugOut(L"[INFO] deltaTime: %f, mspf: %f\n", deltaTime, mspf);

@@ -1,6 +1,7 @@
 #pragma once
 #include "../Framework/Core/Game.h"
 #include "TestGameManager.h"
+#include "RunCommand.h"
 
 class TestGame : public Game
 {
@@ -10,6 +11,4 @@ public:
 	void Update();
 	void LateUpdate();
 	void Draw();
-	
-
 };
