@@ -14,9 +14,9 @@ class Game
 public:
     Game(HINSTANCE _hInstance, int _nCmdShow);
     virtual void Initialize() = 0;
-    virtual void Update();
-    virtual void LateUpdate();
-    virtual void Draw();
+    virtual void Update() = 0;
+    virtual void LateUpdate() = 0;
+    virtual void Draw() = 0;
     bool IsRunning() const;
 
 protected:

@@ -11,17 +11,6 @@ Game::Game(HINSTANCE _hInstance, int _nCmdShow)
 	timer->Start();
 }
 
-void Game::Update() { 
-	
-}
-
-void Game::LateUpdate() {
-}
-
-void Game::Draw() { 
-	
-}
-
 bool Game::IsRunning() const
 {
 	MSG msg;
