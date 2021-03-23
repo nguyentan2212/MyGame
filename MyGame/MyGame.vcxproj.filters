@@ -93,6 +93,15 @@
     <ClInclude Include="TestGame\TestGameManager.h">
       <Filter>Test Game</Filter>
     </ClInclude>
+    <ClInclude Include="Framework\Core\Enums.h">
+      <Filter>Framework\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Core\KeyInfo.h">
+      <Filter>Framework\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Core\GameCommand.h">
+      <Filter>Framework\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyGame.cpp">
@@ -142,6 +151,12 @@
     </ClCompile>
     <ClCompile Include="TestGame\TestGameManager.cpp">
       <Filter>Test Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Core\KeyInfo.cpp">
+      <Filter>Framework\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Core\GameCommand.cpp">
+      <Filter>Framework\Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
