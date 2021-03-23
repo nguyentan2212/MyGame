@@ -168,6 +168,7 @@
     <ClInclude Include="MyGame.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="TestGame\RunCommand.h" />
     <ClInclude Include="TestGame\TestGame.h" />
     <ClInclude Include="TestGame\TestGameManager.h" />
   </ItemGroup>
@@ -188,6 +189,7 @@
     <ClCompile Include="Framework\Utility\StringConverter.cpp" />
     <ClCompile Include="Framework\Utility\Vector2D.cpp" />
     <ClCompile Include="MyGame.cpp" />
+    <ClCompile Include="TestGame\RunCommand.cpp" />
     <ClCompile Include="TestGame\TestGame.cpp" />
     <ClCompile Include="TestGame\TestGameManager.cpp" />
   </ItemGroup>

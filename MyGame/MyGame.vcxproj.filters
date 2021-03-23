@@ -102,6 +102,9 @@
     <ClInclude Include="Framework\Core\GameCommand.h">
       <Filter>Framework\Core</Filter>
     </ClInclude>
+    <ClInclude Include="TestGame\RunCommand.h">
+      <Filter>Test Game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyGame.cpp">
@@ -157,6 +160,9 @@
     </ClCompile>
     <ClCompile Include="Framework\Core\GameCommand.cpp">
       <Filter>Framework\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="TestGame\RunCommand.cpp">
+      <Filter>Test Game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
