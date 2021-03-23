@@ -80,7 +80,7 @@ void Window::Draw(Sprite* sprite, double x, double y)
 {
 	if (sprite->flip)
 	{
-		x *= -1;
+		x = x * -1 - sprite->width;
 	}
 	D3DXVECTOR3 pos(x, y, 0);
 	RECT source = sprite->GetRect();
