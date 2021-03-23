@@ -1,107 +1,80 @@
 #include "KeyInput.h"
 
-KeyInput::KeyInput(HINSTANCE hInstance, HWND hWnd)
+KeyInput::KeyInput()
 {
-	HRESULT hr = DirectInput8Create(
-		hInstance,
-		DIRECTINPUT_VERSION,
-		IID_IDirectInput8,
-		(VOID**)&di,
-		NULL);
-
-	if (hr != DI_OK)
-	{
-		
-		return;
-	}
-	
-	hr = di->CreateDevice(GUID_SysKeyboard, &didv, NULL);
-
-	// TO-DO: put in exception handling
-	if (hr != DI_OK)
-	{
-		
-		return;
-	}
-
-	hr = didv->SetDataFormat(&c_dfDIKeyboard);
-
-	hr = didv->SetCooperativeLevel(hWnd, DISCL_FOREGROUND | DISCL_NONEXCLUSIVE);
-
-	DIPROPDWORD dipdw;
-
-	dipdw.diph.dwSize = sizeof(DIPROPDWORD);
-	dipdw.diph.dwHeaderSize = sizeof(DIPROPHEADER);
-	dipdw.diph.dwObj = 0;
-	dipdw.diph.dwHow = DIPH_DEVICE;
-	dipdw.dwData = KEYBOARD_BUFFER_SIZE; // Arbitary buffer size
-
-	hr = didv->SetProperty(DIPROP_BUFFERSIZE, &dipdw.diph);
-
-	hr = didv->Acquire();
-	if (hr != DI_OK)
-	{
-		
-		return;
-	}
-	
+	keyboardStateCurrent.fill(0);
+	keyboardStatePrevious.fill(0);
 }
 
-void KeyInput::CaptureInput()
+KeyInput::~KeyInput()
 {
-	HRESULT hr;
+	for (auto x : commands)
+		delete x;
+	commands.clear();
 
-	// Collect all key states first
-	hr = didv->GetDeviceState(sizeof(keyStates), keyStates);
-	if (FAILED(hr))
-	{
-		// If the keyboard lost focus or was not acquired then try to get control back.
-		if ((hr == DIERR_INPUTLOST) || (hr == DIERR_NOTACQUIRED))
-		{
-			HRESULT h = didv->Acquire();
-			if (h == DI_OK)
-			{
-			}
-			else return;
-		}
+	for (auto x : activeCommands)
+		delete x;
+	activeCommands.clear();
+}
+
+void KeyInput::AcquireInput()
+{
+	getKeyBoardState();
+	update();
+	executeCommands();
+}
+
+void KeyInput::AddCommand(GameCommand* command)
+{
+	commands.push_back(command);
+}
+
+void KeyInput::getKeyBoardState()
+{
+	keyboardStatePrevious = keyboardStateCurrent;
+	for (int i = 0; i < 256; i++)
+		keyboardStateCurrent[i] = isPressed(i);
+}
+
+KeyState KeyInput::getKeyState(int keyCode) const
+{
+	if (keyboardStatePrevious[keyCode] == 1)
+		if (keyboardStateCurrent[keyCode] == 1)
+			return KeyState::StillPressed;
 		else
+			return KeyState::JustReleased;
+	else
+		if (keyboardStateCurrent[keyCode] == 1)
+			return KeyState::JustPressed;
+		else
+			return KeyState::StillReleased;
+}
+
+void KeyInput::update()
+{
+	bool isActive = false;
+	activeCommands.clear();
+
+	for (auto x : commands) 
+	{
+		isActive = true;
+		for (auto y : x->GetChord())
 		{
-			//DebugOut(L"[ERROR] DINPUT::GetDeviceState failed. Error: %d\n", hr);
-			return;
+			if (getKeyState(y.GetKeyCode()) != y.GetKeyState())
+			{
+				isActive = false;
+				break;
+			}
 		}
-	}
-
-
-	// Collect all buffered events
-	DWORD dwElements = KEYBOARD_BUFFER_SIZE;
-	hr = didv->GetDeviceData(sizeof(DIDEVICEOBJECTDATA), keyEvents, &dwElements, 0);
-	if (FAILED(hr))
-	{
-		return;
-	}
-	for (int i = 0; i < KEYBOARD_BUFFER_SIZE; i++)
-	{
-		lastFrameKeys[i] = thisFrameKeys[i];
-	}
-	for (int i = 0; i < dwElements; i++)
-	{
-		int keyCode = keyEvents[i].dwOfs;
-		int keyState = keyEvents[i].dwData;
-		thisFrameKeys[keyCode] = ((keyState & 0x80) > 0);
+		if (isActive)
+			activeCommands.push_back(x);
 	}
 }
 
-bool KeyInput::IsKeyPress(int keyCode)
+void KeyInput::executeCommands()
 {
-	return thisFrameKeys[keyCode];
-}
-
-bool KeyInput::IsKeyDown(int keyCode)
-{
-	return !lastFrameKeys[keyCode] && thisFrameKeys[keyCode];
-}
-
-bool KeyInput::IsKeyUp(int keyCode)
-{
-	return lastFrameKeys[keyCode] && !thisFrameKeys[keyCode];
+	for (auto x : activeCommands)
+	{
+		x->Execute();
+	}
 }

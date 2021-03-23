@@ -1,23 +1,27 @@
 #pragma once
 #include <d3d9.h>
 #include <d3dx9.h>
-#include <dinput.h>
-#define KEYBOARD_BUFFER_SIZE 256
+#include <WinUser.h>
+#include <array>
+#include <vector>
+#include "GameCommand.h"
+using namespace std;
+
 class KeyInput
 {
 public:
-	KeyInput(HINSTANCE hInstance, HWND hWnd);
-	void CaptureInput();
-	bool IsKeyPress(int keyCode);
-	bool IsKeyDown(int keyCode);
-	bool IsKeyUp(int keyCode);
-
+	KeyInput();
+	~KeyInput();
+	void AcquireInput();
+	void AddCommand(GameCommand* command);
 private:
-	LPDIRECTINPUT8       di;		// The DirectInput object         
-	LPDIRECTINPUTDEVICE8 didv;		// The keyboard device 
-
-	BYTE  keyStates[256];			// DirectInput keyboard state buffer 
-	DIDEVICEOBJECTDATA keyEvents[KEYBOARD_BUFFER_SIZE];		// Buffered keyboard data
-	bool lastFrameKeys[KEYBOARD_BUFFER_SIZE];
-	bool thisFrameKeys[KEYBOARD_BUFFER_SIZE];
+	array<BYTE, 256> keyboardStateCurrent;
+	array<BYTE, 256> keyboardStatePrevious;
+	vector<GameCommand*> activeCommands;
+	vector<GameCommand*> commands;
+	void getKeyBoardState();
+	bool isPressed(int keyCode) const { return (GetAsyncKeyState(keyCode) & 0x8000) ? 1 : 0; }
+	KeyState getKeyState(int keyCode) const;
+	void update();
+	void executeCommands();
 };
